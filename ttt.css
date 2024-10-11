@@ -1,0 +1,36 @@
+body {
+
+}
+
+h1.head {
+text-align: center;	
+font-size: 100px;
+text-decoration: underline;
+}
+
+table, tr, td {
+border: 4px solid black;
+border-collapse: collapse;
+min-width: 200px;
+height: 200px;
+text-align: center;
+font-size: 200%;
+margin: auto;
+}
+
+#turn {
+border: 3px solid black;
+height: 200px;
+min-width: 200px;
+text-align: center;
+font-size: 200%;
+}
+
+.turntext {
+border: 3px solid black;
+margin: auto;
+font-size: 20px;
+text-align: center;
+width: 120px;
+}
+
