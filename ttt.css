@@ -11,19 +11,21 @@ text-decoration: underline;
 table, tr, td {
 border: 4px solid black;
 border-collapse: collapse;
-min-width: 200px;
-height: 200px;
+min-width: 100px;
+height: 100px;
 text-align: center;
-font-size: 200%;
+font-size: 30px;
 margin: auto;
 }
 
+
+
 #turn {
 border: 3px solid black;
-height: 200px;
-min-width: 200px;
+height: 100px;
+min-width: 100px;
 text-align: center;
-font-size: 200%;
+font-size: 30px;
 }
 
 .turntext {
@@ -34,3 +36,80 @@ text-align: center;
 width: 120px;
 }
 
+#uttt {
+width: 20px;
+height: 20px;
+border: 3px solid black;
+}
+
+#row1 {
+background-color: blue;
+}
+
+#row2 {
+background-color: green;
+}
+
+#row3 {
+background-color: red;
+}
+
+#row4 {
+background-color: purple;
+}
+
+#row5 {
+background-color: orange;
+}
+
+#row6 {
+background-color: yellow;
+}
+
+#row7 {
+background-color: teal;
+}
+
+#row8 {
+background-color: pink;
+}
+
+#row9 {
+background-color: brown;
+}
+
+.cell1 {
+background-color: blue;
+}
+
+.cell2 {
+background-color: red;
+}
+
+.cell3 {
+background-color: yellow;
+}
+
+.cell4 {
+background-color: green
+}
+
+.cell5 {
+background-color: purple;
+}
+
+.cell6 {
+background-color: orange;
+}
+
+.cell7 {
+background-color: pink;
+}
+
+.cell8 {
+background-color: brown;
+}
+
+.cell9 {
+background-color: teal;
+}

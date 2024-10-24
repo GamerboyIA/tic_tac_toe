@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="ttt.css" rel="stylesheet">
+  <script src="uttt.js"></script>
+  <title></title>
+</head>
+<body>
+
+<table class="turn">
+  <tr>
+    <td id="turn">X</td>
+  </tr>
+</table>
+
+        <br>
+
+<div class="turntext">Current Turn</div>
+
+        <br>
+
+<table id="uttt">
+
+<!-- Row 1 -->
+
+<tr id="row1">
+
+<!-- Cell (1 / R1) -->
+
+  <td id="r1c1" class="cell1" onClick="r1c1();"></td>
+  <td id="r1c2" class="cell1" onClick="r1c2();"></td>
+  <td id="r1c3" class="cell1" onClick="r1c3();"></td>
+
+<!-- Cell (2 / R1) -->
+
+  <td id="r1c4" class="cell2" onClick="r1c4();">2</td>
+  <td id="r1c5" class="cell2" onClick="r1c5();">2</td>
+  <td id="r1c6" class="cell2" onClick="r1c6();">2</td>
+
+<!-- Cell (3 / R1) -->
+
+  <td id="r1c7" class="cell3" onClick="r1c7();">3</td>
+  <td id="r1c8" class="cell3" onClick="r1c8();">3</td>
+  <td id="r1c9" class="cell3" onClick="r1c9();">3</td>
+
+</tr>
+
+<!-- /Row 1 -->
+<!-- Row 2 -->
+
+<tr id="row2">
+
+<!-- Cell (1 / R2) -->
+
+  <td id="r2c1" class="cell1" onClick="r2c1();">1</td>
+  <td id="r2c2" class="cell1" onClick="r2c2();">1</td>
+  <td id="r2c3" class="cell1" onClick="r2c3();">1</td>
+  
+<!-- Cell (2 / R2) -->
+
+  <td id="r2c4" class="cell2">2</td>
+  <td id="r2c5" class="cell2">2</td>
+  <td id="r2c6" class="cell2">2</td>
+
+<!-- Cell (3 / R2) -->
+
+  <td id="r2c7" class="cell3">3</td>
+  <td id="r2c8" class="cell3">3</td>
+  <td id="r2c9" class="cell3">3</td>
+
+</tr>
+
+<!-- /Row 2 -->
+<!-- Row 3 -->
+
+<tr id="row3">
+
+<!-- Cell (1 / R3) -->
+
+  <td id="r3c1" class="cell1">1</td>
+  <td id="r3c2" class="cell1">1</td>
+  <td id="r3c3" class="cell1">1</td>
+
+<!-- Cell (2 / R3) -->
+
+  <td id="r3c4" class="cell2">2</td>
+  <td id="r3c5" class="cell2">2</td>
+  <td id="r3c6" class="cell2">2</td>
+
+<!-- Cell (3 / R3) -->
+
+  <td id="r3c7" class="cell3">3</td>
+  <td id="r3c8" class="cell3">3</td>
+  <td id="r3c9" class="cell3">3</td>
+
+</tr>
+
+<!-- /Row 3 -->
+<!-- Row 4 -->
+
+<tr id="row4">
+
+<!-- Cell (4) -->
+
+  <td id="r4c1" class="cell4">4</td>
+  <td id="r4c2" class="cell4">4</td>
+  <td id="r4c3" class="cell4">4</td>
+
+<!-- Cell (5) -->
+
+  <td id="r4c4" class="cell5">5</td>
+  <td id="r4c5" class="cell5">5</td>
+  <td id="r4c6" class="cell5">5</td>
+
+<!-- Cell (6) -->
+
+  <td id="r4c7" class="cell6">6</td>
+  <td id="r4c8" class="cell6">6</td>
+  <td id="r4c9" class="cell6">6</td>
+
+</tr>
+
+<!-- /Row 4 -->
+<!-- Row 5 -->
+
+<tr id="row5">
+
+<!-- Cell (4) -->
+
+  <td id="r5c1" class="cell4">4</td>
+  <td id="r5c2" class="cell4">4</td>
+  <td id="r5c3" class="cell4">4</td>
+
+<!-- Cell (5) -->
+
+  <td id="r5c4" class="cell5">5</td>
+  <td id="r5c5" class="cell5">5</td>
+  <td id="r5c6" class="cell5">5</td>
+
+<!-- Cell (6) -->
+
+  <td id="r5c7" class="cell6">6</td>
+  <td id="r5c8" class="cell6">6</td>
+  <td id="r5c9" class="cell6">6</td>
+
+</tr>
+
+<!-- /Row 5 -->
+<!-- Row 6 -->
+
+<tr id="row6">
+
+<!-- Cell (4) -->
+
+  <td id="r6c1" class="cell4">4</td>
+  <td id="r6c2" class="cell4">4</td>
+  <td id="r6c3" class="cell4">4</td>
+
+<!-- Cell (5) -->
+
+  <td id="r6c4" class="cell5">5</td>
+  <td id="r6c5" class="cell5">5</td>
+  <td id="r6c6" class="cell5">5</td>
+
+<!-- Cell (6) -->
+
+  <td id="r6c7" class="cell6">6</td>
+  <td id="r6c8" class="cell6">6</td>
+  <td id="r6c9" class="cell6">6</td>
+
+</tr>
+
+<!-- /Row 6 -->
+<!-- Row 7 -->
+
+<tr id="row7">
+
+<!-- Cell (7) -->
+
+  <td id="r7c1" class="cell7">7</td>
+  <td id="r7c2" class="cell7">7</td>
+  <td id="r7c3" class="cell7">7</td>
+
+<!-- Cell (8) -->
+
+  <td id="r7c4" class="cell8">8</td>
+  <td id="r7c5" class="cell8">8</td>
+  <td id="r7c6" class="cell8">8</td>
+
+<!-- Cell (9) -->
+
+  <td id="r7c7" class="cell9">9</td>
+  <td id="r7c8" class="cell9">9</td>
+  <td id="r7c9" class="cell9">9</td>
+
+</tr>
+
+<!-- /Row 7 -->
+<!-- Row 8 -->
+
+<tr id="row8">
+
+<!-- Cell (7) -->
+
+  <td id="r8c1" class="cell7">7</td>
+  <td id="r8c2" class="cell7">7</td>
+  <td id="r8c3" class="cell7">7</td>
+
+<!-- Cell (8) -->
+
+  <td id="r8c4" class="cell8">8</td>
+  <td id="r8c5" class="cell8">8</td>
+  <td id="r8c6" class="cell8">8</td>
+
+<!-- Cell (9) -->
+
+  <td id="r8c7" class="cell9">9</td>
+  <td id="r8c8" class="cell9">9</td>
+  <td id="r8c9" class="cell9">9</td>
+
+</tr>
+
+<!-- /Row 8 -->
+<!-- Row 9 -->
+
+<tr id="row9">
+
+<!-- Cell (7) -->
+
+  <td id="r9c1" class="cell7">7</td>
+  <td id="r9c2" class="cell7">7</td>
+  <td id="r9c3" class="cell7">7</td>
+
+<!-- Cell (8) -->
+
+  <td id="r9c4" class="cell8">8</td>
+  <td id="r9c5" class="cell8">8</td>
+  <td id="r9c6" class="cell8">8</td>
+
+<!-- Cell (9) -->
+
+  <td id="r9c7" class="cell9">9</td>
+  <td id="r9c8" class="cell9">9</td>
+  <td id="r9c9" class="cell9">9</td>
+
+</tr>
+
+<!-- /Row 9 -->
+</table>
+
+</body>
+</html>
