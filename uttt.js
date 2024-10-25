@@ -9,6 +9,20 @@ function update_turn() {
    document.getElementById("turn").innerHTML = turn;
 }
 
+function undo() {
+document.getElementById(lastSquare).innerHTML = " ";
+update_turn();
+}
+
+var lastSquare;
+
+function takeTurn(square) {
+  lastSquare = square;
+
+  document.getElementById(square).innerHTML = turn;
+  update_turn();
+}
+
 // -----CELL 1----- //
 
 // ROW 1 //
@@ -52,7 +66,7 @@ function r3c1 () {
   update_turn();
 }
 
-function r3c2 () {  
+function r3c2 () {
   document.getElementById("r3c2").innerHTML = turn;
   update_turn();
 }

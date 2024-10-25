@@ -28,6 +28,8 @@ text-align: center;
 font-size: 30px;
 }
 
+
+
 .turntext {
 border: 3px solid black;
 margin: auto;
@@ -42,40 +44,14 @@ height: 20px;
 border: 3px solid black;
 }
 
-#row1 {
-background-color: blue;
+table#tundo {
+margin: 100px, auto;
 }
 
-#row2 {
-background-color: green;
-}
-
-#row3 {
-background-color: red;
-}
-
-#row4 {
-background-color: purple;
-}
-
-#row5 {
-background-color: orange;
-}
-
-#row6 {
-background-color: yellow;
-}
-
-#row7 {
-background-color: teal;
-}
-
-#row8 {
-background-color: pink;
-}
-
-#row9 {
-background-color: brown;
+#undobutton {
+height: 50px; 
+width: 50px;
+margin: auto;
 }
 
 .cell1 {

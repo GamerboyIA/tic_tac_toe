@@ -13,6 +13,13 @@
   </tr>
 </table>
 
+<br>
+
+<table id="tundo">
+  <tr>
+    <td id="undobutton" onClick="undo();">Undo</td>
+  </tr>
+</table>
         <br>
 
 <div class="turntext">Current Turn</div>
@@ -27,21 +34,21 @@
 
 <!-- Cell (1 / R1) -->
 
-  <td id="r1c1" class="cell1" onClick="r1c1();">1</td>
-  <td id="r1c2" class="cell1" onClick="r1c2();">1</td>
-  <td id="r1c3" class="cell1" onClick="r1c3();">1</td>
+  <td id="r1c1" class="cell1" onClick="takeTurn('r1c1');"></td>
+  <td id="r1c2" class="cell1" onClick="takeTurn('r1c2');"></td>
+  <td id="r1c3" class="cell1" onClick="takeTurn('r1c3');"></td>
 
 <!-- Cell (2 / R1) -->
 
-  <td id="r1c4" class="cell2" onClick="r1c4();">2</td>
-  <td id="r1c5" class="cell2" onClick="r1c5();">2</td>
-  <td id="r1c6" class="cell2" onClick="r1c6();">2</td>
+  <td id="r1c4" class="cell2" onClick="takeTurn('r1c4');"></td>
+  <td id="r1c5" class="cell2" onClick="takeTurn('r1c5');"></td>
+  <td id="r1c6" class="cell2" onClick="takeTurn('r1c6');"></td>
 
 <!-- Cell (3 / R1) -->
 
-  <td id="r1c7" class="cell3" onClick="r1c7();">3</td>
-  <td id="r1c8" class="cell3" onClick="r1c8();">3</td>
-  <td id="r1c9" class="cell3" onClick="r1c9();">3</td>
+  <td id="r1c7" class="cell3" onClick="takeTurn('r1c7');"></td>
+  <td id="r1c8" class="cell3" onClick="takeTurn('r1c8');"></td>
+  <td id="r1c9" class="cell3" onClick="takeTurn('r1c9');"></td>
 
 </tr>
 
@@ -52,21 +59,21 @@
 
 <!-- Cell (1 / R2) -->
 
-  <td id="r2c1" class="cell1" onClick="r2c1();">1</td>
-  <td id="r2c2" class="cell1" onClick="r2c2();">1</td>
-  <td id="r2c3" class="cell1" onClick="r2c3();">1</td>
+  <td id="r2c1" class="cell1" onClick="takeTurn('r2c1');"></td>
+  <td id="r2c2" class="cell1" onClick="takeTurn('r2c2');"></td>
+  <td id="r2c3" class="cell1" onClick="takeTurn('r2c3');"></td>
   
 <!-- Cell (2 / R2) -->
 
-  <td id="r2c4" class="cell2" onClick="r2c4();">2</td>
-  <td id="r2c5" class="cell2" onClick="r2c5();">2</td>
-  <td id="r2c6" class="cell2" onClick="r2c6();">2</td>
+  <td id="r2c4" class="cell2" onClick="takeTurn('r2c4');"></td>
+  <td id="r2c5" class="cell2" onClick="takeTurn('r2c5');"></td>
+  <td id="r2c6" class="cell2" onClick="takeTurn('r2c6');"></td>
 
 <!-- Cell (3 / R2) -->
 
-  <td id="r2c7" class="cell3" onClick="r2c7();">3</td>
-  <td id="r2c8" class="cell3" onClick="r2c8();">3</td>
-  <td id="r2c9" class="cell3" onClick="r2c9();">3</td>
+  <td id="r2c7" class="cell3" onClick="takeTurn('r2c7');"></td>
+  <td id="r2c8" class="cell3" onClick="takeTurn('r2c8');"></td>
+  <td id="r2c9" class="cell3" onClick="takeTurn('r2c9');"></td>
 
 </tr>
 
@@ -77,21 +84,21 @@
 
 <!-- Cell (1 / R3) -->
 
-  <td id="r3c1" class="cell1" onClick="r3c1();">1</td>
-  <td id="r3c2" class="cell1" onClick="r3c2();">1</td>
-  <td id="r3c3" class="cell1" onClick="r3c3();">1</td>
+  <td id="r3c1" class="cell1" onClick="takeTurn('r3c1');"></td>
+  <td id="r3c2" class="cell1" onClick="takeTurn('r3c2');"></td>
+  <td id="r3c3" class="cell1" onClick="takeTurn('r3c3');"></td>
 
 <!-- Cell (2 / R3) -->
 
-  <td id="r3c4" class="cell2" onClick="r3c4();">2</td>
-  <td id="r3c5" class="cell2" onClick="r3c5();">2</td>
-  <td id="r3c6" class="cell2" onClick="r3c6();">2</td>
+  <td id="r3c4" class="cell2" onClick="takeTurn('r3c4');"></td>
+  <td id="r3c5" class="cell2" onClick="takeTurn('r3c5');"></td>
+  <td id="r3c6" class="cell2" onClick="takeTurn('r3c6');"></td>
 
 <!-- Cell (3 / R3) -->
 
-  <td id="r3c7" class="cell3" onClick="r3c7();">3</td>
-  <td id="r3c8" class="cell3" onClick="r3c8();">3</td>
-  <td id="r3c9" class="cell3" onClick="r3c9();">3</td>
+  <td id="r3c7" class="cell3" onClick="takeTurn('r3c7');"></td>
+  <td id="r3c8" class="cell3" onClick="takeTurn('r3c8');"></td>
+  <td id="r3c9" class="cell3" onClick="takeTurn('r3c9');"></td>
 
 </tr>
 
@@ -102,21 +109,21 @@
 
 <!-- Cell (4) -->
 
-  <td id="r4c1" class="cell4" onClick="r4c1();">4</td>
-  <td id="r4c2" class="cell4" onClick="r4c2();">4</td>
-  <td id="r4c3" class="cell4" onClick="r4c3();">4</td>
+  <td id="r4c1" class="cell4" onClick="takeTurn('r4c1');"></td>
+  <td id="r4c2" class="cell4" onClick="takeTurn('r4c2');"></td>
+  <td id="r4c3" class="cell4" onClick="takeTurn('r4c3');"></td>
 
 <!-- Cell (5) -->
 
-  <td id="r4c4" class="cell5" onClick="r4c4();">5</td>
-  <td id="r4c5" class="cell5" onClick="r4c5();">5</td>
-  <td id="r4c6" class="cell5" onClick="r4c6();">5</td>
+  <td id="r4c4" class="cell5" onClick="takeTurn('r4c4');"></td>
+  <td id="r4c5" class="cell5" onClick="takeTurn('r4c5');"></td>
+  <td id="r4c6" class="cell5" onClick="takeTurn('r4c6');"></td>
 
 <!-- Cell (6) -->
 
-  <td id="r4c7" class="cell6" onClick="r4c7();">6</td>
-  <td id="r4c8" class="cell6" onClick="r4c8();">6</td>
-  <td id="r4c9" class="cell6" onClick="r4c9();">6</td>
+  <td id="r4c7" class="cell6" onClick="takeTurn('r4c7');"></td>
+  <td id="r4c8" class="cell6" onClick="takeTurn('r4c8');"></td>
+  <td id="r4c9" class="cell6" onClick="takeTurn('r4c9');"></td>
 
 </tr>
 
@@ -127,21 +134,21 @@
 
 <!-- Cell (4) -->
 
-  <td id="r5c1" class="cell4" onClick="r5c1();">4</td>
-  <td id="r5c2" class="cell4" onClick="r5c2();">4</td>
-  <td id="r5c3" class="cell4" onClick="r5c3();">4</td>
+  <td id="r5c1" class="cell4" onClick="takeTurn('r5c1');"></td>
+  <td id="r5c2" class="cell4" onClick="takeTurn('r5c2');"></td>
+  <td id="r5c3" class="cell4" onClick="takeTurn('r5c3');"></td>
 
 <!-- Cell (5) -->
 
-  <td id="r5c4" class="cell5" onClick="r5c4();">5</td>
-  <td id="r5c5" class="cell5" onClick="r5c5();">5</td>
-  <td id="r5c6" class="cell5" onClick="r5c6();">5</td>
+  <td id="r5c4" class="cell5" onClick="takeTurn('r5c4');"></td>
+  <td id="r5c5" class="cell5" onClick="takeTurn('r5c5');"></td>
+  <td id="r5c6" class="cell5" onClick="takeTurn('r5c6');"></td>
 
 <!-- Cell (6) -->
 
-  <td id="r5c7" class="cell6" onClick="r5c7();">6</td>
-  <td id="r5c8" class="cell6" onClick="r5c8();">6</td>
-  <td id="r5c9" class="cell6" onClick="r5c9();">6</td>
+  <td id="r5c7" class="cell6" onClick="takeTurn('r5c7');"></td>
+  <td id="r5c8" class="cell6" onClick="takeTurn('r5c8');"></td>
+  <td id="r5c9" class="cell6" onClick="takeTurn('r5c9');"></td>
 
 </tr>
 
@@ -152,21 +159,21 @@
 
 <!-- Cell (4) -->
 
-  <td id="r6c1" class="cell4" onClick="r6c1();">4</td>
-  <td id="r6c2" class="cell4" onClick="r6c2();">4</td>
-  <td id="r6c3" class="cell4" onClick="r6c3();">4</td>
+  <td id="r6c1" class="cell4" onClick="takeTurn('r6c1');"></td>
+  <td id="r6c2" class="cell4" onClick="takeTurn('r6c2');"></td>
+  <td id="r6c3" class="cell4" onClick="takeTurn('r6c3');"></td>
 
 <!-- Cell (5) -->
 
-  <td id="r6c4" class="cell5" onClick="r6c4();">5</td>
-  <td id="r6c5" class="cell5" onClick="r6c5();">5</td>
-  <td id="r6c6" class="cell5" onClick="r6c6();">5</td>
+  <td id="r6c4" class="cell5" onClick="takeTurn('r6c4');"></td>
+  <td id="r6c5" class="cell5" onClick="takeTurn('r6c5');"></td>
+  <td id="r6c6" class="cell5" onClick="takeTurn('r6c6');"></td>
 
 <!-- Cell (6) -->
 
-  <td id="r6c7" class="cell6" onClick="r6c7();">6</td>
-  <td id="r6c8" class="cell6" onClick="r6c8();">6</td>
-  <td id="r6c9" class="cell6" onClick="r6c8();">6</td>
+  <td id="r6c7" class="cell6" onClick="takeTurn('r6c7');"></td>
+  <td id="r6c8" class="cell6" onClick="takeTurn('r6c8');"></td>
+  <td id="r6c9" class="cell6" onClick="takeTurn('r6c8');"></td>
 
 </tr>
 
@@ -177,21 +184,21 @@
 
 <!-- Cell (7) -->
 
-  <td id="r7c1" class="cell7" onClick="r7c1();">7</td>
-  <td id="r7c2" class="cell7" onClick="r7c2();">7</td>
-  <td id="r7c3" class="cell7" onClick="r7c3();">7</td>
+  <td id="r7c1" class="cell7" onClick="takeTurn('r7c1');"></td>
+  <td id="r7c2" class="cell7" onClick="takeTurn('r7c2');"></td>
+  <td id="r7c3" class="cell7" onClick="takeTurn('r7c3');"></td>
 
 <!-- Cell (8) -->
 
-  <td id="r7c4" class="cell8" onClick="r7c4();">8</td>
-  <td id="r7c5" class="cell8" onClick="r7c5();">8</td>
-  <td id="r7c6" class="cell8" onClick="r7c6();">8</td>
+  <td id="r7c4" class="cell8" onClick="takeTurn('r7c4');"></td>
+  <td id="r7c5" class="cell8" onClick="takeTurn('r7c5');"></td>
+  <td id="r7c6" class="cell8" onClick="takeTurn('r7c6');"></td>
 
 <!-- Cell (9) -->
 
-  <td id="r7c7" class="cell9" onClick="r7c7();">9</td>
-  <td id="r7c8" class="cell9" onClick="r7c8();">9</td>
-  <td id="r7c9" class="cell9" onClick="r7c9();">9</td>
+  <td id="r7c7" class="cell9" onClick="takeTurn('r7c7');"></td>
+  <td id="r7c8" class="cell9" onClick="takeTurn('r7c8');"></td>
+  <td id="r7c9" class="cell9" onClick="takeTurn('r7c9');"></td>
 
 </tr>
 
@@ -202,21 +209,21 @@
 
 <!-- Cell (7) -->
 
-  <td id="r8c1" class="cell7" onClick="r8c1();">7</td>
-  <td id="r8c2" class="cell7" onClick="r8c2();">7</td>
-  <td id="r8c3" class="cell7" onClick="r8c3();">7</td>
+  <td id="r8c1" class="cell7" onClick="takeTurn('r8c1');"></td>
+  <td id="r8c2" class="cell7" onClick="takeTurn('r8c2');"></td>
+  <td id="r8c3" class="cell7" onClick="takeTurn('r8c3');"></td>
 
 <!-- Cell (8) -->
 
-  <td id="r8c4" class="cell8" onClick="r8c4();">8</td>
-  <td id="r8c5" class="cell8" onClick="r8c5();">8</td>
-  <td id="r8c6" class="cell8" onClick="r8c6();">8</td>
+  <td id="r8c4" class="cell8" onClick="takeTurn('r8c4');"></td>
+  <td id="r8c5" class="cell8" onClick="takeTurn('r8c5');"></td>
+  <td id="r8c6" class="cell8" onClick="takeTurn('r8c6');"></td>
 
 <!-- Cell (9) -->
 
-  <td id="r8c7" class="cell9" onClick="r8c7();">9</td>
-  <td id="r8c8" class="cell9" onClick="r8c8();">9</td>
-  <td id="r8c9" class="cell9" onClick="r8c9();">9</td>
+  <td id="r8c7" class="cell9" onClick="takeTurn('r8c7');"></td>
+  <td id="r8c8" class="cell9" onClick="takeTurn('r8c8');"></td>
+  <td id="r8c9" class="cell9" onClick="takeTurn('r8c9');"></td>
 
 </tr>
 
@@ -227,21 +234,21 @@
 
 <!-- Cell (7) -->
 
-  <td id="r9c1" class="cell7" onClick="r9c1();">7</td>
-  <td id="r9c2" class="cell7" onClick="r9c2();">7</td>
-  <td id="r9c3" class="cell7" onClick="r9c3();">7</td>
+  <td id="r9c1" class="cell7" onClick="takeTurn('r9c1');"></td>
+  <td id="r9c2" class="cell7" onClick="takeTurn('r9c2');"></td>
+  <td id="r9c3" class="cell7" onClick="takeTurn('r9c3');"></td>
 
 <!-- Cell (8) -->
 
-  <td id="r9c4" class="cell8" onClick="r9c4();">8</td>
-  <td id="r9c5" class="cell8" onClick="r9c5();">8</td>
-  <td id="r9c6" class="cell8" onClick="r9c6();">8</td>
+  <td id="r9c4" class="cell8" onClick="takeTurn('r9c4');"></td>
+  <td id="r9c5" class="cell8" onClick="takeTurn('r9c5');"></td>
+  <td id="r9c6" class="cell8" onClick="takeTurn('r9c6');"></td>
 
 <!-- Cell (9) -->
 
-  <td id="r9c7" class="cell9" onClick="r9c7();">9</td>
-  <td id="r9c8" class="cell9" onClick="r9c8();">9</td>
-  <td id="r9c9" class="cell9" onClick="r9c9();">9</td>
+  <td id="r9c7" class="cell9" onClick="takeTurn('r9c7');"></td>
+  <td id="r9c8" class="cell9" onClick="takeTurn('r9c8');"></td>
+  <td id="r9c9" class="cell9" onClick="takeTurn('r9c9');"></td>
 
 </tr>
 
