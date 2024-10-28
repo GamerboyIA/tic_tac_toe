@@ -9,9 +9,11 @@ function update_turn() {
    document.getElementById("turn").innerHTML = turn;
 }
 
+
 function undo() {
 document.getElementById(lastSquare).innerHTML = " ";
 update_turn();
+
 }
 
 var lastSquare;
