@@ -7,6 +7,15 @@ text-align: center;
 font-size: 100px;
 text-decoration: underline;
 }
+#tundo, #undor, #undobutton {
+border 4px solid black;
+border-collapse: collapse;
+min-width: 100px;
+height: 100px; 
+text-align: center;
+font-size: 30px;
+margin: auto;
+}
 
 table, tr, td {
 border: 4px solid black;
@@ -14,7 +23,7 @@ border-collapse: collapse;
 min-width: 100px;
 height: 100px;
 text-align: center;
-font-size: 30px;
+font-size: 70px;
 margin: auto;
 }
 
@@ -88,4 +97,36 @@ background-color: brown;
 
 .cell9 {
 background-color: teal;
+}
+
+.ileft {
+border-left: 7px solid black;
+}
+
+.iright {
+border-right: 7px solid black;
+}
+
+.itop {
+border-top: 7px solid black;
+}
+
+.ibottom {
+border-bottom: 7px solid black;
+}
+
+.oleft {
+border-left: 7px solid black;
+}
+
+.oright {
+border-right: 7px solid black;
+}
+
+.otop {
+border-top: 7px solid black;
+}
+
+.obottom {
+border-bottom: 7px solid black;
 }

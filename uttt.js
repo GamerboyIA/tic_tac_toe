@@ -9,19 +9,18 @@ function update_turn() {
    }
    document.getElementById("turn").innerHTML = turn;
 }
-
+var lastSquare
 
 function undo() {
    console.log('Last square was ' + lastSquare);
    if (!lastSquare) {
-   		return;
-   }	   
+   	return;
+   } 	   
    
 document.getElementById(lastSquare).innerHTML = '';
 update_turn();
-
+  
 }
-
 var lastSquare;
 
 function takeTurn(squareId) {
