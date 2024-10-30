@@ -10,8 +10,10 @@ function update_turn() {
    document.getElementById("turn").innerHTML = turn;
 }
 var lastSquare
+var undoable = false
 
 function undo() {
+if (!undoable) { return; } 
    console.log('Last square was ' + lastSquare);
    if (!lastSquare) {
    	return;
@@ -19,8 +21,9 @@ function undo() {
    
 document.getElementById(lastSquare).innerHTML = '';
 update_turn();
-  
+undoable = false;
 }
+
 var lastSquare;
 
 function takeTurn(squareId) {
@@ -34,7 +37,7 @@ function takeTurn(squareId) {
    console.log('Nope');
       return;
    }
-   
+  undoable = true; 
   square.innerHTML = turn;
   update_turn();
 }
