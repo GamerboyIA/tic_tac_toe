@@ -63,6 +63,8 @@ width: 50px;
 margin: auto;
 }
 
+/* Cells */
+/*
 .cell1 {
 background-color: blue;
 }
@@ -98,35 +100,48 @@ background-color: brown;
 .cell9 {
 background-color: teal;
 }
+*/
+
+#cellOfPlay {
+background-color: red;
+}
+
+
+/* Cells */
+
+/* Borders */
 
 .ileft {
-border-left: 7px solid black;
+border-left: 8px solid black;
 }
 
 .iright {
-border-right: 7px solid black;
+border-right: 8px solid black;
 }
 
 .itop {
-border-top: 7px solid black;
+border-top: 8px solid black;
 }
 
 .ibottom {
-border-bottom: 7px solid black;
+border-bottom: 8px solid black;
 }
 
 .oleft {
-border-left: 7px solid black;
+border-left: 8px solid black;
 }
 
 .oright {
-border-right: 7px solid black;
+border-right: 8px solid black;
 }
 
 .otop {
-border-top: 7px solid black;
+border-top: 8px solid black;
 }
 
 .obottom {
-border-bottom: 7px solid black;
+border-bottom: 8px solid black;
 }
+
+/* Borders */
+
