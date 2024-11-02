@@ -102,9 +102,19 @@ background-color: teal;
 }
 */
 
-#cellOfPlay {
-background-color: red;
+
+#uttt.cell1 .cell1,
+#uttt.cell2 .cell2,
+#uttt.cell3 .cell3,
+#uttt.cell4 .cell4,
+#uttt.cell5 .cell5,
+#uttt.cell6 .cell6,
+#uttt.cell7 .cell7,
+#uttt.cell8 .cell8,
+#uttt.cell9 .cell9 {
+  background-color: red;
 }
+
 
 
 /* Cells */
