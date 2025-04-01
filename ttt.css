@@ -25,10 +25,17 @@ height: 100px;
 text-align: center;
 font-size: 70px;
 margin: auto;
+
 }
-
-
-
+/*
+#gameInfo {
+display: flex;
+text-align: center;
+margin: auto;
+border: 2px solid blue;
+width: 50%;
+}
+*/
 #turn {
 border: 3px solid black;
 height: 100px;
@@ -38,6 +45,9 @@ font-size: 30px;
 }
 
 
+#turnInfo {
+text-align: center;
+}
 
 .turntext {
 border: 3px solid black;
@@ -45,6 +55,8 @@ margin: auto;
 font-size: 20px;
 text-align: center;
 width: 120px;
+display: inline-block;
+
 }
 
 #uttt {

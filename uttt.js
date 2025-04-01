@@ -156,7 +156,7 @@ function getNextCell(squareId) {
 function takeTurn(squareId) {
    console.log('It is ' + turn + ' turn. ' + squareId + ' chosen');
 	
-     
+  // document.getElementById("lastMove").innerHMTL == squareId;  
    var square = document.getElementById(squareId);
    if (square.innerHTML.length > 0) {
    		console.log('Nope');
@@ -170,7 +170,7 @@ function takeTurn(squareId) {
       var selectedCell = getCell(squareId);
       var cellOfPlay = getNextCell(lastSquare);
 		if (selectedCell != cellOfPlay) {
-		   console.log('Must choose square in ' + cellOfPlay);
+		   console.log('Nope, Must choose square in ' + cellOfPlay);
 		   return;
 		}    
     }

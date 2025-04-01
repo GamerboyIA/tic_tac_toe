@@ -7,18 +7,32 @@
 </head>
 <body>
 
-<div class="turntext">Current Turn</div>
+<div id="turnInfo">
+  <div id="curturnText" class="turntext">Current Turn</div>
+
+  <div id="lasturnText" class="turntext">Last Move</div>
+</div>
 
 <br>
+
+<div id="gameInfo">
 
 <table id="curturn" class="turn">
   <tr id="turnr">
     <td id="turn">X</td>
+    <td id="lastMove"></td> 
+  </tr>
+</table>
+
+<table >
+  <tr>
     <td id="undobutton" onClick="undo();">Undo</td>
   </tr>
 </table>
 
+</div>
         <br>
+        
 
 <table id="uttt">
 
