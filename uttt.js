@@ -1,3 +1,10 @@
+/* 
+"Square" is the smallest (Small 1x1 [81])
+"Cell" is the 9 3x3 grids containing 9 "Squares" (Middle 3x3 [9])
+"Board" is the 9x9 grid containing 9 "Cells" and 81 "Squares" (Large 9x9 [1])
+*/
+
+
 var turn = 'X';
 var turns = Array();
 
@@ -37,7 +44,7 @@ function undo() {
 	update_turn();
 	
 }
-
+// Ranges for each cell
 function getCell(squareId) {
 	var row = Number(squareId[1]);
 	var col = Number(squareId[3]);
@@ -78,7 +85,7 @@ function getCell(squareId) {
 		return 9;
 	}	
 }
-
+// Which cell will be next based on last played square
 function getNextCell(squareId) {
 	var row = Number(squareId[1]);
 	var col = Number(squareId[3]);
