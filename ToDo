@@ -1,0 +1,14 @@
+--Create board 
+
+--Create move system
+Ensure that each 'move' restricts the next 'move' to the correct 'cell of play' "3x3 grid of squares"
+
+--Create undo system
+
+--Create turn system
+
+--Add detection for a "won" 'cell' / restrict plays in that 'cell' / when that 'cell' would become 'cell of play' instead allow all  non "won" 'cells' to be played
+
+
+
+
