@@ -35,13 +35,17 @@ function undo() {
 	   console.log('No turns');
 	return;
 	}
+	
 	var lastSquare = turns.pop();
 	
    console.log('Last square was ' + lastSquare);
      
-   
+   	      document.getElementById("lastMove").innerHTML = turns[turns.length -1];
+
 	document.getElementById(lastSquare).innerHTML = '';
 	update_turn();
+
+
 	
 }
 // Ranges for each cell
@@ -165,6 +169,9 @@ function takeTurn(squareId) {
 
     
     if (turns.length > 0) {
+      // VV this displays the last move on the board, after the first move
+     // document.getElementById("lastMove").innerHTML = turns[turns.length -1];
+
       var lastSquare = turns[turns.length - 1];   	
       console.log('Last move was ' + lastSquare);
       var selectedCell = getCell(squareId);
@@ -179,7 +186,8 @@ function takeTurn(squareId) {
    console.log(turns);
    console.log('you selected cell ' + getCell(squareId));
    console.log('next cell is ' + getNextCell(squareId));
-  
+  	      document.getElementById("lastMove").innerHTML = turns[turns.length -1].toUpperCase();
+
   square.innerHTML = turn;
   update_turn();
 }

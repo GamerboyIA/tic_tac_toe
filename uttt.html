@@ -18,16 +18,33 @@
 <div id="gameInfo">
 
 <table id="curturn" class="turn">
+
   <tr id="turnr">
-    <td id="turn">X</td>
+
+<!-- Displays current turn X / 0 -->
+
+    <td id="turn" class="turnDisplay"> X </td>
+
+    <td id="spacer" class="stop"> 0 </td>
+
+<!-- Displays the (r c) coordinates of the last move -->
+
     <td id="lastMove"></td> 
+
   </tr>
+
 </table>
 
+<br>
+
 <table >
+
   <tr>
+
     <td id="undobutton" onClick="undo();">Undo</td>
+
   </tr>
+
 </table>
 
 </div>

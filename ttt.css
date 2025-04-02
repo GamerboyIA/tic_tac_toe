@@ -7,8 +7,11 @@ text-align: center;
 font-size: 100px;
 text-decoration: underline;
 }
+
+
+
 #tundo, #undor, #undobutton {
-border 4px solid black;
+border: 4px solid black;
 border-collapse: collapse;
 min-width: 100px;
 height: 100px; 
@@ -27,6 +30,9 @@ font-size: 70px;
 margin: auto;
 
 }
+
+
+
 /*
 #gameInfo {
 display: flex;
@@ -37,14 +43,19 @@ width: 50%;
 }
 */
 #turn {
-border: 3px solid black;
 height: 100px;
 min-width: 100px;
 text-align: center;
-font-size: 30px;
+font-size: 50px;
 }
 
 
+
+
+#lastMove {
+font-size: 40px;
+
+}
 #turnInfo {
 text-align: center;
 }
@@ -73,6 +84,12 @@ margin: 100px, auto;
 height: 50px; 
 width: 50px;
 margin: auto;
+}
+
+#spacer {
+border: 1px dashed white;
+width: 20px;
+background-color: blue;
 }
 
 /* Cells */
