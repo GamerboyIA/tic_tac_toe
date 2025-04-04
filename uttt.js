@@ -186,7 +186,15 @@ function takeTurn(squareId) {
    console.log(turns);
    console.log('you selected cell ' + getCell(squareId));
    console.log('next cell is ' + getNextCell(squareId));
-  	      document.getElementById("lastMove").innerHTML = turns[turns.length -1].toUpperCase();
+
+if (turns.length !== 0) {
+     document.getElementById("lastMove").innerHTML = turns[turns.length -1].toUpperCase();
+
+} else { 
+
+     document.getElementById("lastMove").innerHTML == "---";
+
+}
 
   square.innerHTML = turn;
   update_turn();

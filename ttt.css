@@ -28,39 +28,17 @@ height: 100px;
 text-align: center;
 font-size: 70px;
 margin: auto;
-
-}
-
-
-
-/*
-#gameInfo {
-display: flex;
-text-align: center;
-margin: auto;
-border: 2px solid blue;
-width: 50%;
-}
-*/
-#turn {
-height: 100px;
-min-width: 100px;
-text-align: center;
-font-size: 50px;
 }
 
 
 
 
-#lastMove {
-font-size: 40px;
-
-}
 #turnInfo {
 text-align: center;
 }
 
-.turntext {
+
+.turnText {
 border: 3px solid black;
 margin: auto;
 font-size: 20px;
@@ -69,6 +47,39 @@ width: 120px;
 display: inline-block;
 
 }
+
+#spacer_turn {
+border: 4px solid white;
+width: 2px;
+}
+
+#gameInfo {
+text-align: center;
+vertical-align: middle;
+}
+
+.gameText {
+border: 4px solid black;
+font-size: 40px;
+text-align: center;
+width: 100px;
+height: 100px;
+display: inline-block;
+vertical-align: middle;
+line-height: 100px;
+}
+
+
+#lastMove {
+min-height: 100px;
+}
+
+#spacer_game {
+border: 4px solid white;
+width: 10px;
+}
+
+
 
 #uttt {
 width: 20px;
@@ -86,11 +97,7 @@ width: 50px;
 margin: auto;
 }
 
-#spacer {
-border: 1px dashed white;
-width: 20px;
-background-color: blue;
-}
+
 
 /* Cells */
 /*
