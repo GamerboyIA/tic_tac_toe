@@ -44,10 +44,13 @@ function undo() {
 
 	document.getElementById(lastSquare).innerHTML = '';
 	update_turn();
-
-
 	
+if (document.getElementById("lastMove").innerHTML == "undefined") {
+ document.getElementById("lastMove").innerHTML = "---";
+
 }
+	}
+
 // Ranges for each cell
 function getCell(squareId) {
 	var row = Number(squareId[1]);
@@ -188,13 +191,15 @@ function takeTurn(squareId) {
    console.log('next cell is ' + getNextCell(squareId));
 
 if (turns.length !== 0) {
-     document.getElementById("lastMove").innerHTML = turns[turns.length -1].toUpperCase();
+     document.getElementById("lastMove").innerHTML = turns[turns.length -1];
 
 } else { 
 
      document.getElementById("lastMove").innerHTML == "---";
 
 }
+
+
 
   square.innerHTML = turn;
   update_turn();
