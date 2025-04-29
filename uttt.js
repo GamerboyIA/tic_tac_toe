@@ -29,13 +29,16 @@ function update_turn() {
    }
    document.getElementById("turn").innerHTML = turn;
 
-   var table = document.getElementById('uttt');
+   let table = document.getElementById('uttt');
    
 	if (turns.length > 0) {
-	   var lastSquare = turns[turns.length - 1];   	
-	   var cellOfPlay = getNextCell(lastSquare);
-	   
-	   table.className = 'cell' + cellOfPlay;
+	   let lastSquare = turns[turns.length - 1];   	
+	   let cellOfPlay = getNextCell(lastSquare);
+	   let classValue = '';
+	   for (let i=0; i<cellOfPlay.length; i++) {
+	   		classValue += 'cell' + cellOfPlay[i] + ' ';
+	   }
+	   table.className = classValue;
 	} else {
 	   table.className = '';
 	}
@@ -57,7 +60,7 @@ function undo() {
 	return;
 	}
 	
-	var lastSquare = turns.pop();
+	let lastSquare = turns.pop();
 	
    console.log('Last square was ' + lastSquare);
      
@@ -65,10 +68,10 @@ function undo() {
 
 	document.getElementById(lastSquare).innerHTML = '';
 	
-	var cellRow = Number(lastSquare[1]);
-	var cellCol = Number(lastSquare[2]);
-	var squareRow = Number(lastSquare[3]);
-	var squareCol = Number(lastSquare[4]);
+	let cellRow = Number(lastSquare[1]);
+	let cellCol = Number(lastSquare[2]);
+	let squareRow = Number(lastSquare[3]);
+	let squareCol = Number(lastSquare[4]);
    
    	// update data
     (boardData[cellRow][cellCol])[squareRow][squareCol] = null;
@@ -85,19 +88,35 @@ if (document.getElementById("lastMove").innerHTML == "undefined") {
 
 // Ranges for each cell
 function getCell(squareId) {
-	var row = Number(squareId[1]);
-	var col = Number(squareId[2]);
+	let row = Number(squareId[1]);
+	let col = Number(squareId[2]);
 	
 	return cellMap[row][col];
 }
 
-// Which cell will be next based on last played square
+// Which cell(s) will be next based on last played square
+// S0000
 function getNextCell(squareId) {
-	var row = Number(squareId[3]);
-	var col = Number(squareId[4]);
+	let row = Number(squareId[3]);
+	let col = Number(squareId[4]);
 	
-	return cellMap[row][col];
-
+	if (getWinner(boardData[row][col])) {
+		let openCells = [];
+		for (let row=0; row <3; row++) {
+		   for (let col=0; col<3; col++) {
+			   let cell = boardData[row][col];
+			   let winner = getWinner(cell);
+			   if (winner == null) {
+					openCells.push(cellMap[row][col]);
+			   }
+		   }		   
+		}   
+		
+		return openCells;
+	} else {
+		cell = cellMap[row][col];
+		return [ cell ];
+	}
 }
 
 //              0123
@@ -109,7 +128,7 @@ function takeTurn(squareId) {
    console.log('It is ' + turn + ' turn. ' + squareId + ' chosen');
 	
   // document.getElementById("lastMove").innerHMTL == squareId;  
-   var square = document.getElementById(squareId);
+   let square = document.getElementById(squareId);
    if (square.innerHTML.length > 0) {
    	  console.log('Nope');
       return;
@@ -120,11 +139,12 @@ function takeTurn(squareId) {
       // VV this displays the last move on the board, after the first move
      // document.getElementById("lastMove").innerHTML = turns[turns.length -1];
 
-      var lastSquare = turns[turns.length - 1];   	
+      let lastSquare = turns[turns.length - 1];   	
       console.log('Last move was ' + lastSquare);
-      var selectedCell = getCell(squareId);
-      var cellOfPlay = getNextCell(lastSquare);
-		if (selectedCell != cellOfPlay) {
+      let selectedCell = getCell(squareId);
+      
+      let cellOfPlay = getNextCell(lastSquare);
+      if (cellOfPlay.indexOf(selectedCell) == -1) {
 		   console.log('Nope, Must choose square in ' + cellOfPlay);
 		   return;
 		}    
@@ -144,19 +164,19 @@ function takeTurn(squareId) {
 
    square.innerHTML = turn;
    
-	var cellRow = Number(squareId[1]);
-	var cellCol = Number(squareId[2]);
-	var squareRow = Number(squareId[3]);
-	var squareCol = Number(squareId[4]);
+	let cellRow = Number(squareId[1]);
+	let cellCol = Number(squareId[2]);
+	let squareRow = Number(squareId[3]);
+	let squareCol = Number(squareId[4]);
    
    	// update data
     (boardData[cellRow][cellCol])[squareRow][squareCol] = turn;
-    console.log(boardData);
+//     console.log(boardData);
     
 	for (let row=0; row <3; row++) {
 	   for (let col=0; col<3; col++) {
-	       var cell = boardData[row][col];
-	       var winner = getWinner(cell);
+	       let cell = boardData[row][col];
+	       let winner = getWinner(cell);
 	       console.log('Cell ' + row + ', ' + col + ' winner is: ' + winner);
 	   }
 	}   
@@ -175,7 +195,6 @@ function getWinner(cell) {
 
   // check for vertical win
 	for (let c=0; c<3; c++) {
-    console.log(cell[c]);
 		if (cell[0][c] === cell[1][c] && cell[0][c] === cell[2][c] && cell[0][c] !== null) {
       console.log('V');
 			return cell[0][c];
