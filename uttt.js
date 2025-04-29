@@ -64,6 +64,17 @@ function undo() {
    	      document.getElementById("lastMove").innerHTML = turns[turns.length -1];
 
 	document.getElementById(lastSquare).innerHTML = '';
+	
+	var cellRow = Number(lastSquare[1]);
+	var cellCol = Number(lastSquare[2]);
+	var squareRow = Number(lastSquare[3]);
+	var squareCol = Number(lastSquare[4]);
+   
+   	// update data
+    (boardData[cellRow][cellCol])[squareRow][squareCol] = null;
+    console.log(boardData);
+	
+	
 	update_turn();
 	
 if (document.getElementById("lastMove").innerHTML == "undefined") {
@@ -132,6 +143,24 @@ function takeTurn(squareId) {
    }
 
    square.innerHTML = turn;
+   
+	var cellRow = Number(squareId[1]);
+	var cellCol = Number(squareId[2]);
+	var squareRow = Number(squareId[3]);
+	var squareCol = Number(squareId[4]);
+   
+   	// update data
+    (boardData[cellRow][cellCol])[squareRow][squareCol] = turn;
+    console.log(boardData);
+    
+	for (let row=0; row <3; row++) {
+	   for (let col=0; col<3; col++) {
+	       var cell = boardData[row][col];
+	       var winner = getWinner(cell);
+	       console.log('Cell ' + row + ', ' + col + ' winner is: ' + winner);
+	   }
+	}   
+   
    update_turn();
 }
 
