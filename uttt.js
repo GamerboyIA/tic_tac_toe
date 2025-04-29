@@ -92,6 +92,8 @@ function getNextCell(squareId) {
 //              0123
 // Square id is RXCY
 
+//     Cell    Square
+// S [y] [x]) [y] [x]
 function takeTurn(squareId) {
    console.log('It is ' + turn + ' turn. ' + squareId + ' chosen');
 	
