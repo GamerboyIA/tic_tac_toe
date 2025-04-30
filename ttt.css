@@ -31,6 +31,21 @@ margin: auto;
 }
 
 
+#gameInput{
+text-align: center;
+vertical-align: middle;
+}
+
+.gameText {
+border: 4px solid black;
+font-size: 40px;
+text-align: center;
+width: 100px;
+height: 100px;
+display: inline-block;
+vertical-align: middle;
+line-height: 100px;
+}
 
 
 #turnInfo {
@@ -91,11 +106,7 @@ table#tundo {
 margin: 100px, auto;
 }
 
-#undobutton {
-height: 50px; 
-width: 50px;
-margin: auto;
-}
+
 
 
 

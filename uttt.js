@@ -4,22 +4,26 @@
 "Board" is the 9x9 grid containing 9 "Cells" and 81 "Squares" (Large 9x9 [1])
 */
 
-
+//determines current turn
 var turn = 'X';
+//turns: list of all turns taken
 var turns = Array();
 
+
+//structure for cell data
 var boardData = [
 	 [getCellData(), getCellData(), getCellData()],
 	 [getCellData(), getCellData(), getCellData()],
    [getCellData(), getCellData(), getCellData()]
 ];
-
+//Coordinates for cells and squares
 var cellMap = [
 	[1,2,3],
 	[4,5,6],
 	[7,8,9]
 ];
-
+//dictates what happens at the end of each turn to prepare for next turn
+//also updates all visuals on board
 function update_turn() {
   firstMove = false; 
   if (turn == 'X') {
@@ -27,10 +31,11 @@ function update_turn() {
   } else {
     turn = 'X';
    }
+   //displays the current turn "X" or "O"
    document.getElementById("turn").innerHTML = turn;
 
+//Determines background color for cell of play
    let table = document.getElementById('uttt');
-   
 	if (turns.length > 0) {
 	   let lastSquare = turns[turns.length - 1];   	
 	   let cellOfPlay = getNextCell(lastSquare);
@@ -44,7 +49,7 @@ function update_turn() {
 	}
    
 }
-
+//data structure for each square in a cell
 function getCellData() {
   return [
 	 [null, null, null ],
@@ -53,7 +58,7 @@ function getCellData() {
 ];
 }
 
-
+//Logic for undo button and the various visual and logic it interacts with
 function undo() {
 	if (turns.length == 0) {
 	   console.log('No turns');
@@ -65,21 +70,22 @@ function undo() {
    console.log('Last square was ' + lastSquare);
      
    	      document.getElementById("lastMove").innerHTML = turns[turns.length -1];
-
+// resets visual board information back to blank
 	document.getElementById(lastSquare).innerHTML = '';
-	
+	//coordinate system
 	let cellRow = Number(lastSquare[1]);
 	let cellCol = Number(lastSquare[2]);
 	let squareRow = Number(lastSquare[3]);
 	let squareCol = Number(lastSquare[4]);
    
-   	// update data
+   	// update data resets data structure information
     (boardData[cellRow][cellCol])[squareRow][squareCol] = null;
     console.log(boardData);
 	
 	
 	update_turn();
-	
+	//updates last move box and ensures that the box 
+	//displays correct value even when set back to turn 0
 if (document.getElementById("lastMove").innerHTML == "undefined") {
  document.getElementById("lastMove").innerHTML = "---";
 
@@ -125,6 +131,13 @@ function getNextCell(squareId) {
 //     Cell    Square
 // S [y] [x]) [y] [x]
 function takeTurn(squareId) {
+let winner = getGameWinner();
+	console.log('winner is ' + winner);
+
+if(winner !== null){
+return;
+}
+
    console.log('It is ' + turn + ' turn. ' + squareId + ' chosen');
 	
   // document.getElementById("lastMove").innerHMTL == squareId;  
@@ -142,14 +155,15 @@ function takeTurn(squareId) {
       let lastSquare = turns[turns.length - 1];   	
       console.log('Last move was ' + lastSquare);
       let selectedCell = getCell(squareId);
-      
+      //logic to prevent move made outside of the cellOfPlay
       let cellOfPlay = getNextCell(lastSquare);
       if (cellOfPlay.indexOf(selectedCell) == -1) {
 		   console.log('Nope, Must choose square in ' + cellOfPlay);
 		   return;
 		}    
     }
-        
+    
+    //updates turn list 
    turns.push(squareId);
    console.log(turns);
    console.log('you selected cell ' + getCell(squareId));
@@ -163,7 +177,7 @@ function takeTurn(squareId) {
    }
 
    square.innerHTML = turn;
-   
+   //updates data structure with current move
 	let cellRow = Number(squareId[1]);
 	let cellCol = Number(squareId[2]);
 	let squareRow = Number(squareId[3]);
@@ -177,13 +191,22 @@ function takeTurn(squareId) {
 	   for (let col=0; col<3; col++) {
 	       let cell = boardData[row][col];
 	       let winner = getWinner(cell);
-	       console.log('Cell ' + row + ', ' + col + ' winner is: ' + winner);
+// 	       console.log('Cell ' + row + ', ' + col + ' winner is: ' + winner);
 	   }
 	}   
    
    update_turn();
+   
+	winner = getGameWinner();
+	console.log('winner is ' + winner);
+
+if(winner !== null){
+alert(winner + " Wins!");
+}
 }
 
+
+//logic for determining if a cell has been "won" by checking for any of the 4 win states
 function getWinner(cell) {
 	// check for horizontal win
 	for (let r=0; r<3; r++) {
@@ -216,5 +239,23 @@ function getWinner(cell) {
   return null;
  }
 
+function resetGame(){
+while(turns.length>0){
+undo();
+}
+}
 
-
+function getGameWinner()  {
+	let cellWinner = getCellData();
+	
+	// determine winner for each cell
+	for (let row=0; row <3; row++) {
+	   for (let col=0; col<3; col++) {
+	       let cell = boardData[row][col];
+	       cellWinner[row][col] = getWinner(cell);
+	   }
+	}   
+	
+	return getWinner(cellWinner);
+	
+}
