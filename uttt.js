@@ -17,6 +17,7 @@ var boardData = [
    [getCellData(), getCellData(), getCellData()]
 ];
 //Coordinates for cells and squares
+//data structure for the cells displayed with the HTML
 var cellMap = [
 	[1,2,3],
 	[4,5,6],

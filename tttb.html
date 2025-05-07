@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+ <head>
+<title> Tic Tac Toe 'Blitz' (WIP) </title>
+<link href="ttt.css" rel="stylesheet">
+<script src="tttb.js"></script>
+
+ </head>
+
+
+
+<body>
+
+<div id="turnInfo">
+  <div id="curturnText" class="turnText">Current Turn</div>
+  <div id="spacer_turn" class="turnText"></div>
+  <div id="lasturnText" class="turnText">Last Move</div>
+</div>
+
+<br>
+
+<div id="gameInfo">
+  <div id="turn" class="gameText"> X </div>
+
+  <div id="spacer_game" class="gameText"></div>
+
+  <div id="lastMove" class="gameText"> --- </div>
+</div>
+
+<br>
+
+<div id="gameInput">
+
+  <div id="resetGame" class="gameText" onClick="resetGame();"> Reset </div>
+
+</div>
+
+<br><br>
+
+<div id="blitzBoard"">
+
+<table id="tttb">
+  <tr>
+    <td id="S00" class="blitz Boleft Botop" onClick="takeTurn('S00');"></td>
+    <td id="S01" class="blitz Botop" onClick="takeTurn('S01');"></td>
+    <td id="S02" class="blitz Botop Boright" onClick="takeTurn('S02');"></td>
+  </tr>
+
+  <tr>
+    <td id="S10" class="blitz Boleft" onClick="takeTurn('S10');"></td>
+    <td id="S11" class="blitz" onClick="takeTurn('S11');"></td>
+    <td id="S12" class="blitz Boright" onClick="takeTurn('S12');"></td>
+  </tr>
+
+  <tr>
+    <td id="S20" class="blitz Boleft Bobottom" onClick="takeTurn('S20');"></td>
+    <td id="S21" class="blitz Bobottom" onClick="takeTurn('S21');"></td>
+    <td id="S22" class="blitz Bobottom Boright" onClick="takeTurn('S22');"></td>
+  </tr>
+</table>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
+

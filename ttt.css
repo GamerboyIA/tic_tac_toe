@@ -31,6 +31,16 @@ margin: auto;
 }
 
 
+.blitz {
+border: 7px solid black;
+border-collapse: collapse;
+min-width: 200px;
+height: 200px;
+text-align: center;
+font-size: 140px;
+margin: auto;
+}
+
 #gameInput{
 text-align: center;
 vertical-align: middle;
@@ -200,5 +210,23 @@ border-top: 8px solid black;
 border-bottom: 8px solid black;
 }
 
-/* Borders */
+/* /Borders */
+/* Blitz Borders */
 
+.Botop {
+border-top: 9px solid black;
+}
+
+.Boleft {
+border-left: 9px solid black;
+}
+
+.Boright {
+border-right: 9px solid black;
+}
+
+.Bobottom {
+border-bottom: 9px solid black;
+}
+
+/* /Blitz Borders*/
