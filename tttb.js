@@ -67,10 +67,6 @@ function takeTurn(squareId) {
 let winner = getGameWinner();
 	console.log('winner is ' + winner);
 
-if(winner !== null){
-return;
-}
-
    console.log('It is ' + turn + ' turn. ' + squareId + ' chosen');
 	
   // document.getElementById("lastMove").innerHMTL == squareId;  
