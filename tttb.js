@@ -3,6 +3,8 @@ var turn = 'X';
 //turns: list of all turns taken
 var turns = Array();
 
+var boardData = getCellData();
+
 
 var cellMap = [
 	[1,2,3],
@@ -18,7 +20,8 @@ function update_turn() {
     turn = 'X';
    }
 
-document.getElementById("turn").innerHTML = turn;
+  document.getElementById("turn").innerHTML = turn;
+}
 
 function getCellData() {
   return [
@@ -46,12 +49,13 @@ function undo() {
 	//coordinate system
 /*	let cellRow = Number(lastSquare[1]);
 	let cellCol = Number(lastSquare[2]);*/
-	let squareRow = Number(lastSquare[3]);
-	let squareCol = Number(lastSquare[4]);
+	let squareRow = Number(lastSquare[1]);
+	let squareCol = Number(lastSquare[2]);
+	
+	    boardData[squareRow][squareCol] = null;
+    console.log(boardData);
    
    	// update data resets data structure information
-    (boardData[cellRow][cellCol])[squareRow][squareCol] = null;
-    console.log(boardData);
 	
 	
 	update_turn();
@@ -64,8 +68,12 @@ if (document.getElementById("lastMove").innerHTML == "undefined") {
 	}
 
 function takeTurn(squareId) {
-let winner = getGameWinner();
+let winner = getWinner(boardData);
 	console.log('winner is ' + winner);
+
+if(winner !== null){
+return;
+}
 
    console.log('It is ' + turn + ' turn. ' + squareId + ' chosen');
 	
@@ -83,25 +91,76 @@ let winner = getGameWinner();
 
       let lastSquare = turns[turns.length - 1];   	
       console.log('Last move was ' + lastSquare);
-      let selectedCell = getCell(squareId);
-      //logic to prevent move made outside of the cellOfPlay
-      let cellOfPlay = getNextCell(lastSquare);
-      if (cellOfPlay.indexOf(selectedCell) == -1) {
-		   console.log('Nope, Must choose square in ' + cellOfPlay);
-		   return;
-		}    
+    
     }
     
     //updates turn list 
    turns.push(squareId);
    console.log(turns);
-   console.log('you selected cell ' + getCell(squareId));
-   console.log('next cell is ' + getNextCell(squareId));
+//   console.log('you selected cell ' + getCell(squareId));
+//   console.log('next cell is ' + getNextCell(squareId));
 
    if (turns.length !== 0) {
      document.getElementById("lastMove").innerHTML = turns[turns.length -1];
     } else { 
      document.getElementById("lastMove").innerHTML == "---";
 
-   }
-   }
+  	 }
+   square.innerHTML = turn;
+   //updates data structure with current move
+	
+	let squareRow = Number(squareId[1]);
+	let squareCol = Number(squareId[2]);
+   
+   	// update data
+    boardData[squareRow][squareCol] = turn;  	 
+  	 console.log(boardData);
+
+ update_turn();
+	
+	winner = getWinner(boardData);
+	console.log('winner is ' + winner);
+
+if(winner !== null){
+alert(winner + " Wins!");
+}
+}
+function resetGame(){
+while(turns.length>0){
+undo();
+}
+}
+
+function getWinner(cell) {
+	// check for horizontal win
+	for (let r=0; r<3; r++) {
+		if (cell[r][0] === cell[r][1] && cell[r][0] === cell[r][2] && cell[r][0] !== null) {
+      console.log('H');
+			return cell[r][0];
+		}
+	}
+
+  // check for vertical win
+	for (let c=0; c<3; c++) {
+		if (cell[0][c] === cell[1][c] && cell[0][c] === cell[2][c] && cell[0][c] !== null) {
+      console.log('V');
+			return cell[0][c];
+		}
+	}
+  
+  // check top left to bottom right diagaol
+  if (cell[0][0] === cell[1][1] && cell[0][0] === cell[2][2] && cell[0][0] !== null) {
+      console.log('D1');
+    return cell[0][0];
+  }
+  
+    // check bottom left to top right diagaol
+  if (cell[2][0] === cell[1][1] && cell[2][0] === cell[0][2] && cell[2][0] !== null) {
+      console.log('D2');
+    return cell[2][0];
+  }
+  
+  return null;
+}
+
+

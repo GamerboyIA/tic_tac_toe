@@ -1,263 +1,71 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title> TIC-TAC-TOE </title>
+ <head>
+<title> Tic Tac Toe 'Blitz' (WIP) </title>
 <link href="ttt.css" rel="stylesheet">
-<script src="ttt.js"></script>
-<h1 class="head">TIC-TAC-TOE</h1>
-</head>
+<script src="tttb.js"></script>
+
+ </head>
+
+
+
 <body>
-<!-- 
-GOAL(s):
 
-- Find a to ensure a square can only be selected ONCE -
+<div id="turnInfo">
+  <div id="curturnText" class="turnText">Current Turn</div>
+  <div id="spacer_turn" class="turnText"></div>
+  <div id="lasturnText" class="turnText">Last Move</div>
+</div>
 
-- Attempt to create a (semi)Functional "Ultimate Tic-Tac-Toe" board -
+<br>
 
--->
+<div id="gameInfo">
+  <div id="turn" class="gameText"> X </div>
 
-<table class="turn">
+  <div id="spacer_game" class="gameText"></div>
+
+  <div id="lastMove" class="gameText"> --- </div>
+</div>
+
+<br>
+
+<div id="gameInput">
+
+  <div id="resetGame" class="gameText" onClick="resetGame();"> Reset </div>
+
+</div>
+
+<br><br>
+
+<div id="blitzBoard"">
+
+<table id="tttb">
   <tr>
-    <td id="turn">X</td>
+    <td id="S00" class="blitz Boleft Botop" onClick="takeTurn('S00');"></td>
+    <td id="S01" class="blitz Botop" onClick="takeTurn('S01');"></td>
+    <td id="S02" class="blitz Botop Boright" onClick="takeTurn('S02');"></td>
+  </tr>
+
+  <tr>
+    <td id="S10" class="blitz Boleft" onClick="takeTurn('S10');"></td>
+    <td id="S11" class="blitz" onClick="takeTurn('S11');"></td>
+    <td id="S12" class="blitz Boright" onClick="takeTurn('S12');"></td>
+  </tr>
+
+  <tr>
+    <td id="S20" class="blitz Boleft Bobottom" onClick="takeTurn('S20');"></td>
+    <td id="S21" class="blitz Bobottom" onClick="takeTurn('S21');"></td>
+    <td id="S22" class="blitz Bobottom Boright" onClick="takeTurn('S22');"></td>
   </tr>
 </table>
-
-	<br>
-
-<div class="turntext">Current Turn</div>
-
-	<br>
-
-<table class="ttt">
-
-<!-- Cell (1) -->
-
-<div id="cellr1c1">
-
-  <tr>
-    <td id="r1c1" onClick="r1c1();"></td>
-    <td id="r1c2" onClick="r1c2();"></td>
-    <td id="r1c3" onClick="r1c3();"></td>
-  </tr>
-
-  <tr>
-    <td id="r2c1" onClick="r2c1();"></td>
-    <td id="r2c2" onClick="r2c2();"></td>
-    <td id="r2c3" onClick="r2c3();"></td>
-  </tr>
-  
-  <tr>
-    <td id="r3c1" onClick="r3c1();"></td>
-    <td id="r3c2" onClick="r3c2();"></td>
-    <td id="r3c3" onClick="r3c3();"></td>
-  </tr>
-
 </div>
 
-<!-- /Cell (1) -->
-<!-- Cell (2) -->
 
-<div id="cellr1c2">
 
-  <tr>
-    <td id="r1c1" onClick="r1c1();"></td>
-    <td id="r1c2" onClick="r1c2();"></td>
-    <td id="r1c3" onClick="r1c3();"></td>
-  </tr>
 
-  <tr>
-    <td id="r2c1" onClick="r2c1();"></td>
-    <td id="r2c2" onClick="r2c2();"></td>
-    <td id="r2c3" onClick="r2c3();"></td>
-  </tr>
-
-  <tr>
-    <td id="r3c1" onClick="r3c1();"></td>
-    <td id="r3c2" onClick="r3c2();"></td>
-    <td id="r3c3" onClick="r3c3();"></td>
-  </tr>
-
-</div>
-
-<!-- /Cell (2) -->
-<!-- Cell (3) -->
-
-<div id="cellr1c3">
-
-  <tr>
-    <td id="r1c1" onClick="r1c1();"></td>
-    <td id="r1c2" onClick="r1c2();"></td>
-    <td id="r1c3" onClick="r1c3();"></td>
-  </tr>
-
-  <tr>
-    <td id="r2c1" onClick="r2c1();"></td>
-    <td id="r2c2" onClick="r2c2();"></td>
-    <td id="r2c3" onClick="r2c3();"></td>
-  </tr>
-
-  <tr>
-    <td id="r3c1" onClick="r3c1();"></td>
-    <td id="r3c2" onClick="r3c2();"></td>
-    <td id="r3c3" onClick="r3c3();"></td>
-  </tr>
-
-</div>
-
-<!-- /Cell (3) -->
-<!-- Cell (4) -->
-
-<div id="cellr2c1">
-
-  <tr>
-    <td id="r1c1" onClick="r1c1();"></td>
-    <td id="r1c2" onClick="r1c2();"></td>
-    <td id="r1c3" onClick="r1c3();"></td>
-  </tr>
-
-  <tr>
-    <td id="r2c1" onClick="r2c1();"></td>
-    <td id="r2c2" onClick="r2c2();"></td>
-    <td id="r2c3" onClick="r2c3();"></td>
-  </tr>
-
-  <tr>
-    <td id="r3c1" onClick="r3c1();"></td>
-    <td id="r3c2" onClick="r3c2();"></td>
-    <td id="r3c3" onClick="r3c3();"></td>
-  </tr>
-
-</div>
-
-<!-- /Cell (4) -->
-<!-- Cell (5) -->
-
-<div id="cellr2c2">
-
-  <tr>
-    <td id="r1c1" onClick="r1c1();"></td>
-    <td id="r1c2" onClick="r1c2();"></td>
-    <td id="r1c3" onClick="r1c3();"></td>
-  </tr>
-
-  <tr>
-    <td id="r2c1" onClick="r2c1();"></td>
-    <td id="r2c2" onClick="r2c2();"></td>
-    <td id="r2c3" onClick="r2c3();"></td>
-  </tr>
-
-  <tr>
-    <td id="r3c1" onClick="r3c1();"></td>
-    <td id="r3c2" onClick="r3c2();"></td>
-    <td id="r3c3" onClick="r3c3();"></td>
-  </tr>
-
-</div>
-
-<!-- /Cell (5) -->
-<!-- Cell (6) -->
-
-<div id="cellr2c3">
-
-  <tr>
-    <td id="r1c1" onClick="r1c1();"></td>
-    <td id="r1c2" onClick="r1c2();"></td>
-    <td id="r1c3" onClick="r1c3();"></td>
-  </tr>
-
-  <tr>
-    <td id="r2c1" onClick="r2c1();"></td>
-    <td id="r2c2" onClick="r2c2();"></td>
-    <td id="r2c3" onClick="r2c3();"></td>
-  </tr>
-
-  <tr>
-    <td id="r3c1" onClick="r3c1();"></td>
-    <td id="r3c2" onClick="r3c2();"></td>
-    <td id="r3c3" onClick="r3c3();"></td>
-  </tr>
-
-</div>
-
-<!-- /Cell (6) -->
-<!-- Cell (7) -->
-
-<div id="cellr3c1">
-
-  <tr>
-    <td id="r1c1" onClick="r1c1();"></td>
-    <td id="r1c2" onClick="r1c2();"></td>
-    <td id="r1c3" onClick="r1c3();"></td>
-  </tr>
-
-  <tr>
-    <td id="r2c1" onClick="r2c1();"></td>
-    <td id="r2c2" onClick="r2c2();"></td>
-    <td id="r2c3" onClick="r2c3();"></td>
-  </tr>
-
-  <tr>
-    <td id="r3c1" onClick="r3c1();"></td>
-    <td id="r3c2" onClick="r3c2();"></td>
-    <td id="r3c3" onClick="r3c3();"></td>
-  </tr>
-
-</div>
-
-<!-- /Cell (7) -->
-<!-- Cell (8) -->
-
-<div id="cellr3c2">
-
-  <tr>
-    <td id="r1c1" onClick="r1c1();"></td>
-    <td id="r1c2" onClick="r1c2();"></td>
-    <td id="r1c3" onClick="r1c3();"></td>
-  </tr>
-
-  <tr>
-    <td id="r2c1" onClick="r2c1();"></td>
-    <td id="r2c2" onClick="r2c2();"></td>
-    <td id="r2c3" onClick="r2c3();"></td>
-  </tr>
-
-  <tr>
-    <td id="r3c1" onClick="r3c1();"></td>
-    <td id="r3c2" onClick="r3c2();"></td>
-    <td id="r3c3" onClick="r3c3();"></td>
-  </tr>
-
-</div>
-
-<!-- /Cell (8) -->
-<!-- Cell (9) -->
-
-<div id="cellr3c3">
-
-  <tr>
-    <td id="r1c1" onClick="r1c1();"></td>
-    <td id="r1c2" onClick="r1c2();"></td>
-    <td id="r1c3" onClick="r1c3();"></td>
-  </tr>
-
-  <tr>
-    <td id="r2c1" onClick="r2c1();"></td>
-    <td id="r2c2" onClick="r2c2();"></td>
-    <td id="r2c3" onClick="r2c3();"></td>
-  </tr>
-
-  <tr>
-    <td id="r3c1" onClick="r3c1();"></td>
-    <td id="r3c2" onClick="r3c2();"></td>
-    <td id="r3c3" onClick="r3c3();"></td>
-  </tr>
-
-</div>
-
-<!-- /Cell (9) -->
-</table>
 
 
 
 </body>
 </html>
+
