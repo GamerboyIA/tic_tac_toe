@@ -12,6 +12,7 @@ var cellMap = [
 	[7,8,9]
 ];
 
+
 function update_turn() {
   firstMove = false; 
   if (turn == 'X') {
@@ -64,8 +65,8 @@ function undo() {
 if (document.getElementById("lastMove").innerHTML == "undefined") {
  document.getElementById("lastMove").innerHTML = "---";
 
-}
 	}
+}
 
 function takeTurn(squareId) {
 let winner = getWinner(boardData);
@@ -74,6 +75,13 @@ let winner = getWinner(boardData);
 if(winner !== null){
 return;
 }
+
+//Marked detection
+if(turns.length = 6){
+document.getElementById("lastMove").innerHTML = '';
+let markedSquare = turns.shift();
+console.log(markedSquare + " is Marked"); 
+  }
 
    console.log('It is ' + turn + ' turn. ' + squareId + ' chosen');
 	
@@ -116,6 +124,7 @@ return;
     boardData[squareRow][squareCol] = turn;  	 
   	 console.log(boardData);
 
+
  update_turn();
 	
 	winner = getWinner(boardData);
@@ -123,12 +132,14 @@ return;
 
 if(winner !== null){
 alert(winner + " Wins!");
-}
+  }
+
+
 }
 function resetGame(){
 while(turns.length>0){
 undo();
-}
+  }
 }
 
 function getWinner(cell) {
