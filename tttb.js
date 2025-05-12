@@ -87,6 +87,15 @@ console.log(markedSquare + " is Marked");
 	    boardData[squareRow][squareCol] = null;
 
   }
+let turnColor = squareId
+//TurnClass color designation
+if(turnColor == 'X'){
+  turnColor.classList.add(turn + "turnClass");
+   } else if(turnColor == 'O'){
+    turnColor.classList.add(turn + "turnClass");
+  }
+
+
 
    console.log('It is ' + turn + ' turn. ' + squareId + ' chosen');
 	

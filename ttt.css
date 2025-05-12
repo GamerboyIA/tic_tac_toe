@@ -172,7 +172,14 @@ background-color: teal;
   background-color: #a9a9a9;
 }
 
+.XturnClass {
+color: red;
 
+}
+
+.OturnClass {
+color: blue;
+}
 
 /* Cells */
 
