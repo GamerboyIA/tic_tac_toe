@@ -77,10 +77,15 @@ return;
 }
 
 //Marked detection
-if(turns.length = 6){
-document.getElementById("lastMove").innerHTML = '';
+if(turns.length == 6){
 let markedSquare = turns.shift();
-console.log(markedSquare + " is Marked"); 
+console.log(markedSquare + " is Marked");
+       document.getElementById(markedSquare).innerHTML = null;
+	let squareRow = Number(markedSquare[1]);
+	let squareCol = Number(markedSquare[2]);
+	
+	    boardData[squareRow][squareCol] = null;
+
   }
 
    console.log('It is ' + turn + ' turn. ' + squareId + ' chosen');
@@ -140,6 +145,8 @@ function resetGame(){
 while(turns.length>0){
 undo();
   }
+  turn = 'X';
+  document.getElementById("turn").innerHTML = turn;
 }
 
 function getWinner(cell) {
