@@ -74,26 +74,45 @@ let winner = getWinner(boardData);
 
 if(winner !== null){
 return;
-}
+  }
+
+if(turns.length == 5){
+   console.log(turns[0] + " is Marked()");
+    let markedSquaree = document.getElementById(turns[0]);
+     let squareRow = Number(markedSquaree[1]);
+     let squareCol = Number(markedSquaree[2]);
+console.log("turn = " + turn);
+console.log("markedSquaree = " + markedSquaree);
+  //TurnClass color designation
+update_turn();
+     markedSquaree.classList.add(turn+"turnClass");
+update_turn();
+ /* if(markedSquaree == 'X'){
+    markedSquaree.classList.add(markedSquaree + "turnClass");
+    console.log("Marked class added to " + markedSquaree); 
+    } else if(markedSquaree == 'O'){
+      markedSquaree.classList.add(turn + "turnClass");
+      console.log("Marked class added to " + markedSquaree); 
+   }*/
+
+//console.log("turnColor = " turnColor);
+
+  }
 
 //Marked detection
 if(turns.length == 6){
 let markedSquare = turns.shift();
 console.log(markedSquare + " is Marked");
        document.getElementById(markedSquare).innerHTML = null;
+
 	let squareRow = Number(markedSquare[1]);
 	let squareCol = Number(markedSquare[2]);
 	
 	    boardData[squareRow][squareCol] = null;
+   let markedSquaree = document.getElementById(turns[0]);
+   markedSquaree.classList.add(turn+"turnClass");
+  }
 
-  }
-let turnColor = squareId
-//TurnClass color designation
-if(turnColor == 'X'){
-  turnColor.classList.add(turn + "turnClass");
-   } else if(turnColor == 'O'){
-    turnColor.classList.add(turn + "turnClass");
-  }
 
 
 
