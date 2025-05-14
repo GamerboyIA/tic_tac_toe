@@ -172,6 +172,10 @@ background-color: teal;
   background-color: #a9a9a9;
 }
 
+.turnClass {
+color: green;
+}
+
 .XturnClass {
 color: red;
 

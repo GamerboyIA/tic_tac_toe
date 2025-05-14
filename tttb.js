@@ -75,6 +75,8 @@ let winner = getWinner(boardData);
 if(winner !== null){
 return;
   }
+//Color Designation / Marked Piece Logic
+
 
 if(turns.length == 5){
    console.log(turns[0] + " is Marked()");
@@ -85,7 +87,7 @@ console.log("turn = " + turn);
 console.log("markedSquaree = " + markedSquaree);
   //TurnClass color designation
 update_turn();
-     markedSquaree.classList.add(turn+"turnClass");
+     markedSquaree.classList.add("turnClass");
 update_turn();
  /* if(markedSquaree == 'X'){
     markedSquaree.classList.add(markedSquaree + "turnClass");
@@ -101,16 +103,22 @@ update_turn();
 
 //Marked detection
 if(turns.length == 6){
-let markedSquare = turns.shift();
-console.log(markedSquare + " is Marked");
-       document.getElementById(markedSquare).innerHTML = null;
+  let markedSquare = turns.shift();
+  let markedSquaree = document.getElementById(turns[0]);
+     console.log(markedSquare + " is Marked");
+   markedSquaree.classList.remove("turnClass");
+
+      document.getElementById(markedSquare).innerHTML = null;
 
 	let squareRow = Number(markedSquare[1]);
 	let squareCol = Number(markedSquare[2]);
 	
 	    boardData[squareRow][squareCol] = null;
-   let markedSquaree = document.getElementById(turns[0]);
-   markedSquaree.classList.add(turn+"turnClass");
+   update_turn();
+   markedSquaree.classList.add("turnClass");
+   console.log(turns[0]);
+   console.log("Turn is " + turn);
+   console.log("Turn is this long " + turn.length)
   }
 
 
@@ -137,6 +145,7 @@ console.log(markedSquare + " is Marked");
     
     //updates turn list 
    turns.push(squareId);
+   console.log("Turns");
    console.log(turns);
 //   console.log('you selected cell ' + getCell(squareId));
 //   console.log('next cell is ' + getNextCell(squareId));
