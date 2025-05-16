@@ -2,7 +2,7 @@
 var turn = 'X';
 //turns: list of all turns taken
 var turns = Array();
-
+var shiftedSquares = Array();
 var boardData = getCellData();
 
 
@@ -86,9 +86,7 @@ if(turns.length == 5){
 console.log("turn = " + turn);
 console.log("markedSquaree = " + markedSquaree);
   //TurnClass color designation
-update_turn();
      markedSquaree.classList.add("turnClass");
-update_turn();
  /* if(markedSquaree == 'X'){
     markedSquaree.classList.add(markedSquaree + "turnClass");
     console.log("Marked class added to " + markedSquaree); 
@@ -102,9 +100,16 @@ update_turn();
   }
 
 //Marked detection
+
 if(turns.length == 6){
+
+let classCheck = document.querySelector("td.turnClass");
+  shiftedSquares.push(turns[0]);
   let markedSquare = turns.shift();
   let markedSquaree = document.getElementById(turns[0]);
+    for (let i=0; i<shiftedSquares.length; i++) {
+    let markedSquares = document.getElementById(shiftedSquares[i]);
+    }
      console.log(markedSquare + " is Marked");
    markedSquaree.classList.remove("turnClass");
 
@@ -114,12 +119,16 @@ if(turns.length == 6){
 	let squareCol = Number(markedSquare[2]);
 	
 	    boardData[squareRow][squareCol] = null;
-   update_turn();
    markedSquaree.classList.add("turnClass");
    console.log(turns[0]);
    console.log("Turn is " + turn);
-   console.log("Turn is this long " + turn.length)
+   console.log("Shifted Squares = " + shiftedSquares);
+    if (markedSquares.classList.contains("turnClass")){
+      markedSquares.classList.remove("turnClass");
+      console.log("Removed From " + shiftedSquares[0]);
+    }
   }
+  
 
 
 
