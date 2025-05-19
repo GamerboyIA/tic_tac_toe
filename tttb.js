@@ -41,9 +41,20 @@ function undo() {
 	}
 	
 	let lastSquare = turns.pop();
-	
+ shiftedSquares.push(turns[0]);
+  let markedSquares;
+   
+    for (let i=0; i<shiftedSquares.length; i++) {
+    markedSquares = document.getElementById(shiftedSquares[i]);
+    }	
    console.log('Last square was ' + lastSquare);
-     
+   if (markedSquares.classList.contains("XturnClass")){
+      markedSquares.classList.remove("XturnClass");
+      console.log("Removed 'X' From " + shiftedSquares[0]);
+     } else if (markedSquares.classList.contains("OturnClass")) {
+       markedSquares.classList.remove("OturnClass");
+       console.log("Removed 'O' From " + shiftedSquares[0]);
+   }   
    	      document.getElementById("lastMove").innerHTML = turns[turns.length -1];
 // resets visual board information back to blank
 	document.getElementById(lastSquare).innerHTML = '';
@@ -84,17 +95,21 @@ console.log("--------------- TURN LENGTH LOGIC ------------------");
     let markedSquaree = document.getElementById(turns[0]);
      let squareRow = Number(markedSquaree[1]);
      let squareCol = Number(markedSquaree[2]);
-  shiftedSquares.push(turns[0]);
+ /* shiftedSquares.push(turns[0]);
 
      for (let i=0; i<shiftedSquares.length; i++) {
       let markedSquares = document.getElementById(shiftedSquares[i]);
       }
         console.log("shifted squares = " + shiftedSquares);
-
+*/
 console.log("turn = " + turn);
 console.log("markedSquaree = " + markedSquaree);
   //TurnClass color designation
-     markedSquaree.classList.add("turnClass");
+    if(markedSquaree.innerHTML == "X"){
+     markedSquaree.classList.add("XturnClass");
+    } else if(markedSquaree.innerHTML == "O"){
+     markedSquaree.classList.add("OturnClass");
+      }
  /* if(markedSquaree == 'X'){
     markedSquaree.classList.add(markedSquaree + "turnClass");
     console.log("Marked class added to " + markedSquaree); 
@@ -112,25 +127,32 @@ console.log("turns = " + turns);
   console.log("shifted squares = " + shiftedSquares);
   let markedSquare = turns.shift();
   let markedSquaree = document.getElementById(turns[0]);
+  let markedSquares;
     for (let i=0; i<shiftedSquares.length; i++) {
-    let markedSquares = document.getElementById(shiftedSquares[i]);
+    markedSquares = document.getElementById(shiftedSquares[i]);
     }
+    console.log(shiftedSquares);
      console.log(markedSquare + " is Marked");
-   markedSquaree.classList.remove("turnClass");
-
       document.getElementById(markedSquare).innerHTML = null;
 
 	let squareRow = Number(markedSquare[1]);
 	let squareCol = Number(markedSquare[2]);
 	
 	    boardData[squareRow][squareCol] = null;
-   markedSquaree.classList.add("turnClass");
-  
-    if (markedSquares.classList.contains("turnClass")){
-      markedSquares.classList.remove("turnClass");
-      console.log("Removed From " + shiftedSquares[0]);
+     if(markedSquaree.innerHTML == "X"){
+     markedSquaree.classList.add("XturnClass");
+    } else if(markedSquaree.innerHTML == "O"){
+     markedSquaree.classList.add("OturnClass");
+      }
       
-    }
+
+    if (markedSquares.classList.contains("XturnClass")){
+      markedSquares.classList.remove("XturnClass");
+      console.log("Removed 'X' From " + shiftedSquares[0]);
+     } else if (markedSquares.classList.contains("OturnClass")) {
+       markedSquares.classList.remove("OturnClass");
+       console.log("Removed 'O' From " + shiftedSquares[0]);
+   } 
    console.log(turns[0]);
    console.log("It is " + turn + " turn");
    console.log("Shifted Squares = " + shiftedSquares);
