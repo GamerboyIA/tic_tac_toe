@@ -79,10 +79,18 @@ return;
 
 
 if(turns.length == 5){
+console.log("--------------- TURN LENGTH LOGIC ------------------");
    console.log(turns[0] + " is Marked()");
     let markedSquaree = document.getElementById(turns[0]);
      let squareRow = Number(markedSquaree[1]);
      let squareCol = Number(markedSquaree[2]);
+  shiftedSquares.push(turns[0]);
+
+     for (let i=0; i<shiftedSquares.length; i++) {
+      let markedSquares = document.getElementById(shiftedSquares[i]);
+      }
+        console.log("shifted squares = " + shiftedSquares);
+
 console.log("turn = " + turn);
 console.log("markedSquaree = " + markedSquaree);
   //TurnClass color designation
@@ -96,15 +104,12 @@ console.log("markedSquaree = " + markedSquaree);
    }*/
 
 //console.log("turnColor = " turnColor);
+console.log("turns = " + turns);
+  } else if (turns.length == 6) { 
 
-  }
-
-//Marked detection
-
-if(turns.length == 6){
-
-let classCheck = document.querySelector("td.turnClass");
+  let classCheck = document.querySelector("td.turnClass");
   shiftedSquares.push(turns[0]);
+  console.log("shifted squares = " + shiftedSquares);
   let markedSquare = turns.shift();
   let markedSquaree = document.getElementById(turns[0]);
     for (let i=0; i<shiftedSquares.length; i++) {
@@ -120,15 +125,20 @@ let classCheck = document.querySelector("td.turnClass");
 	
 	    boardData[squareRow][squareCol] = null;
    markedSquaree.classList.add("turnClass");
-   console.log(turns[0]);
-   console.log("Turn is " + turn);
-   console.log("Shifted Squares = " + shiftedSquares);
+  
     if (markedSquares.classList.contains("turnClass")){
       markedSquares.classList.remove("turnClass");
       console.log("Removed From " + shiftedSquares[0]);
+      
     }
+   console.log(turns[0]);
+   console.log("It is " + turn + " turn");
+   console.log("Shifted Squares = " + shiftedSquares);
+   console.log("turns(2) = " + turns);
+console.log("--------------- TURN LENGTH LOGIC ------------------");
   }
-  
+
+//Marked detection
 
 
 
@@ -154,6 +164,7 @@ let classCheck = document.querySelector("td.turnClass");
     
     //updates turn list 
    turns.push(squareId);
+   console.log("--------------- END// TURN LENGTH LOGIC ------------------");
    console.log("Turns");
    console.log(turns);
 //   console.log('you selected cell ' + getCell(squareId));
