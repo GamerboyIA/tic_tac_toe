@@ -2,7 +2,6 @@
 var turn = 'X';
 //turns: list of all turns taken
 var turns = Array();
-var shiftedSquares = Array();
 var boardData = getCellData();
 
 
@@ -22,6 +21,30 @@ function update_turn() {
    }
 
   document.getElementById("turn").innerHTML = turn;
+
+	for (let row=0; row<2; row++) {
+		for (let col=0; col<2; col++) {
+			let square = document.getElementById('S'+row+col);
+			square.classList.remove('OturnClass');
+			square.classList.remove('XturnClass');
+		}
+	}
+		
+  if (turns.length == 6) {
+     let markedSquaree = document.getElementById(turns[0]);
+     let squareRow = Number(markedSquaree[1]);
+     let squareCol = Number(markedSquaree[2]);
+	    
+	console.log("turn = " + turn);
+	console.log("markedSquaree = " + markedSquaree);
+	  //TurnClass color designation
+    if (markedSquaree.innerHTML == "X") {
+     markedSquaree.classList.add("XturnClass");
+    } else if (markedSquaree.innerHTML == "O") {
+     markedSquaree.classList.add("OturnClass");
+      }
+  }  
+  
 }
 
 function getCellData() {
@@ -40,16 +63,9 @@ function undo() {
 	return;
 	}
 	
-	let lastSquare = turns.pop();
-	
-   console.log('Last square was ' + lastSquare);
-     
-   	      document.getElementById("lastMove").innerHTML = turns[turns.length -1];
-// resets visual board information back to blank
+	let lastSquare = turns.pop();   
 	document.getElementById(lastSquare).innerHTML = '';
 	//coordinate system
-/*	let cellRow = Number(lastSquare[1]);
-	let cellCol = Number(lastSquare[2]);*/
 	let squareRow = Number(lastSquare[1]);
 	let squareCol = Number(lastSquare[2]);
 	
@@ -75,63 +91,9 @@ let winner = getWinner(boardData);
 if(winner !== null){
 return;
   }
-//Color Designation / Marked Piece Logic
-
-
-if(turns.length == 5){
-   console.log(turns[0] + " is Marked()");
-    let markedSquaree = document.getElementById(turns[0]);
-     let squareRow = Number(markedSquaree[1]);
-     let squareCol = Number(markedSquaree[2]);
-console.log("turn = " + turn);
-console.log("markedSquaree = " + markedSquaree);
-  //TurnClass color designation
-     markedSquaree.classList.add("turnClass");
- /* if(markedSquaree == 'X'){
-    markedSquaree.classList.add(markedSquaree + "turnClass");
-    console.log("Marked class added to " + markedSquaree); 
-    } else if(markedSquaree == 'O'){
-      markedSquaree.classList.add(turn + "turnClass");
-      console.log("Marked class added to " + markedSquaree); 
-   }*/
 
 //console.log("turnColor = " turnColor);
-
-  }
-
-//Marked detection
-
-if(turns.length == 6){
-
-let classCheck = document.querySelector("td.turnClass");
-  shiftedSquares.push(turns[0]);
-  let markedSquare = turns.shift();
-  let markedSquaree = document.getElementById(turns[0]);
-    for (let i=0; i<shiftedSquares.length; i++) {
-    let markedSquares = document.getElementById(shiftedSquares[i]);
-    }
-     console.log(markedSquare + " is Marked");
-   markedSquaree.classList.remove("turnClass");
-
-      document.getElementById(markedSquare).innerHTML = null;
-
-	let squareRow = Number(markedSquare[1]);
-	let squareCol = Number(markedSquare[2]);
-	
-	    boardData[squareRow][squareCol] = null;
-   markedSquaree.classList.add("turnClass");
-   console.log(turns[0]);
-   console.log("Turn is " + turn);
-   console.log("Shifted Squares = " + shiftedSquares);
-    if (markedSquares.classList.contains("turnClass")){
-      markedSquares.classList.remove("turnClass");
-      console.log("Removed From " + shiftedSquares[0]);
-    }
-  }
-  
-
-
-
+console.log("turns = " + turns);
 
    console.log('It is ' + turn + ' turn. ' + squareId + ' chosen');
 	
@@ -148,12 +110,20 @@ let classCheck = document.querySelector("td.turnClass");
      // document.getElementById("lastMove").innerHTML = turns[turns.length -1];
 
       let lastSquare = turns[turns.length - 1];   	
-      console.log('Last move was ' + lastSquare);
+      console.log('Last move was ' + lastSquare);    
+    }
     
+    if (turns.length==6) {
+        let markedSquare = turns.shift();	
+		let squareRow = Number(markedSquare[1]);
+		let squareCol = Number(markedSquare[2]);
+        document.getElementById(markedSquare).innerHTML = null;
+	    boardData[squareRow][squareCol] = null;  	       
     }
     
     //updates turn list 
    turns.push(squareId);
+   console.log("--------------- END// TURN LENGTH LOGIC ------------------");
    console.log("Turns");
    console.log(turns);
 //   console.log('you selected cell ' + getCell(squareId));
@@ -193,6 +163,7 @@ undo();
   }
   turn = 'X';
   document.getElementById("turn").innerHTML = turn;
+  document.getElementById("lastMove").innerHTML = "---";
 }
 
 function getWinner(cell) {
@@ -226,5 +197,3 @@ function getWinner(cell) {
   
   return null;
 }
-
-
