@@ -21,9 +21,8 @@ function update_turn() {
    }
 
   document.getElementById("turn").innerHTML = turn;
-//Bug causing class to not be removed after a certain number of moves
-	for (let row=0; row<2; row++) {
-		for (let col=0; col<2; col++) {
+	for (let row=0; row<3; row++) {
+		for (let col=0; col<3; col++) {
 			let square = document.getElementById('S'+row+col);
 			square.classList.remove('OturnClass');
 			square.classList.remove('XturnClass');
@@ -36,7 +35,6 @@ function update_turn() {
      let squareCol = Number(markedSquaree[2]);
 	    
 	console.log("turn = " + turn);
-	console.log("markedSquaree = " + markedSquaree);
 	  //TurnClass color designation
     if (markedSquaree.innerHTML == "X") {
      markedSquaree.classList.add("XturnClass");
