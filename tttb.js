@@ -21,7 +21,7 @@ function update_turn() {
    }
 
   document.getElementById("turn").innerHTML = turn;
-
+//Bug causing class to not be removed after a certain number of moves
 	for (let row=0; row<2; row++) {
 		for (let col=0; col<2; col++) {
 			let square = document.getElementById('S'+row+col);
